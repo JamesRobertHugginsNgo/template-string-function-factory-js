@@ -24,3 +24,12 @@ console.log(render(config, { type: 'es5', quote: '\'' }));
 
 console.log('\nES5 - DOUBLE QUOTE');
 console.log(render(config, { type: 'es5', quote: '"' }));
+
+console.log('\nHELLO WORLD');
+const helloWorld = func(['name'], tag(fix('p'), null, cat(
+	fix('Hello '),
+	exp('name'),
+	fix('!'),
+)));
+console.log(JSON.stringify(helloWorld, null, 2));
+console.log(render(helloWorld));
