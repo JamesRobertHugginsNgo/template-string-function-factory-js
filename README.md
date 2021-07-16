@@ -1,4 +1,4 @@
-# Template String Function JS
+# Template String Function Factory JS
 
 A dev tool to help generate template strings formatted for ES5 and ES6.
 

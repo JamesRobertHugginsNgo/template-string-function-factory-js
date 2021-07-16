@@ -1,5 +1,5 @@
 {
-  "name": "template-string-function",
+  "name": "template-string-function-factory-js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesRobertHugginsNgo/template-string-function-js.git"
+    "url": "git+https://github.com/JamesRobertHugginsNgo/template-string-function-factory-js.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JamesRobertHugginsNgo/template-string-function-js/issues"
+    "url": "https://github.com/JamesRobertHugginsNgo/template-string-function-factory-js/issues"
   },
-  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-js#readme"
+  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-factory-js#readme"
 }
