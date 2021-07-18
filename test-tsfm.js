@@ -1,0 +1,1 @@
+module.exports = function(names) { return "<p>Hello " + (names == null || names.length === 0 ? "World" : (names.length === 1 ? (names[0]) : ((names.slice(0, names.length - 1)).map(function(name) { return (name); }).join(', ')) + " and " + (names[names.length - 1]))) + "!</p>"; }

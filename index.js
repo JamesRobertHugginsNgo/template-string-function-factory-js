@@ -133,11 +133,7 @@ render['expMap'] = function ({ array, arguments = [], value, joinString = '' } =
 		values.push(`function(`);
 	}
 
-	const length = arguments.length;
-	for (let index = 0; index < length; index++) {
-		const argument = arguments[index];
-		values.push(argument);
-	}
+	values.push(arguments.join(', '));
 
 	if (type === 'es6') {
 		values.push(`) => `);
