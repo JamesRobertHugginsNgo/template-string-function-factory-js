@@ -2,7 +2,7 @@
  
 __[ [ [__ Template String __]__ Function __]__ String __]__ Factory
 
-A factory `function` that creates a function `string` that evaluates to a `function` that returns a `string` built on a argument based `template string`.
+A factory `function` that creates a function `string` that evaluates to a `function` that returns a `string` built on an argument based `template string`.
 
 ## Example 1: Hello World
 
@@ -18,7 +18,7 @@ const { cat, exp, fix, func, render } = require('./index');
 		cat(
 			fix('Hello '),
 			exp('name'),
-			fix('!'),
+			fix('!')
 		)
 	);
 	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
@@ -51,7 +51,7 @@ const { cat, exp, fix, func, tag, render } = require('./index');
 			cat(
 				fix('Hello '),
 				exp('name'),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -88,7 +88,7 @@ const { cat, exp, expIf, fix, func, tag, render } = require('./index');
 					fix('World'),
 					exp('name')
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -128,11 +128,11 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 						cat(
 							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
-					),
+					)
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -172,11 +172,11 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 						cat(
 							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
 					),
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -215,11 +215,11 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 						cat(
 							expMap('names.slice(0, names.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
 					),
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -256,3 +256,53 @@ console.log(test(['Tom', 'Dick', 'Stanly']));
 An alternative is to create the script, run the code, then copy the output and paste it on your code.
 
 Enjoy!
+
+## Reference
+
+### ConfigObject
+
+A JavaScript object with a "type" property and other related properties that can be rendered using the "render" function.
+s
+### fix
+
+fix(`string:` value) `=> ConfigObject`
+
+Configuration for fix value.
+
+### exp
+
+exp(`string:` value) `=> ConfigObject`
+
+Configuration for expressions.
+
+### expIf
+
+expIf(`string:` condition, `ConfigObject:` trueValue, `ConfigObject:` falseValue) `=> ConfigObject`
+
+Configuration for if-then-else expressions.
+
+### expMap
+
+expMap(`string:` array, `string[]:` arguments, `ConfigObject:` value, `string:` joinString) `=> ConfigObject`
+
+Configuration for array-map expressions.
+
+### cat
+cat(... `ConfigObject:` values) `=> ConfigObject`
+
+Concatinates for concatinating multiple ConfigObjects.
+
+### tag
+tag(`ConfigObject:` name, `ConfigObject:` attributes, `ConfigObject:` body) `=> ConfigObject`
+
+Configuration for HTML tag.
+
+### func
+func(`string[]:` arguments, `ConfigObject:` value) `=> ConfigObject`
+
+Configuration for function.
+
+### render
+render(`ConfigObject:` config, { `string:` type, `string:` quote }) `=> string`
+
+Factory function to "render" the ConfigObject into string.
