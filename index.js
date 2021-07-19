@@ -112,7 +112,7 @@ render['exp'] = function ({ value } = {}, { type, quote } = {}) {
 	return `(${value})`;
 };
 
-render['expIf'] = function ({ condition, trueValue, falseValue = fix('') } = {}, { type, quote } = {}) {
+render['expIf'] = function ({ condition, trueValue, falseValue } = {}, { type, quote } = {}) {
 	const value = `${condition} ? ${render(trueValue, { type, quote })} : ${render(falseValue, { type, quote })}`
 
 	if (type === 'es6') {
@@ -122,7 +122,7 @@ render['expIf'] = function ({ condition, trueValue, falseValue = fix('') } = {},
 	return `(${value})`;
 };
 
-render['expMap'] = function ({ array, arguments = [], value, joinString = '' } = {}, { type, quote } = {}) {
+render['expMap'] = function ({ array, arguments, value, joinString } = {}, { type, quote } = {}) {
 	let values = [];
 
 	values.push(`(${array}).map(`);
@@ -184,7 +184,7 @@ render['tag'] = function ({ name, attributes, body } = {}, { type, quote } = {})
 	return render(cat(...values), { type, quote });
 };
 
-render['func'] = function ({ arguments = [], value } = {}, { type, quote } = {}) {
+render['func'] = function ({ arguments, value } = {}, { type, quote } = {}) {
 	const values = [];
 
 	if (type === 'es6') {
