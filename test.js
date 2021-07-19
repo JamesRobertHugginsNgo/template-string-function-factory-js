@@ -34,7 +34,7 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 		cat(
 			fix('Hello '),
 			exp('name'),
-			fix('!'),
+			fix('!')
 		)
 	);
 	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
@@ -50,7 +50,7 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 			cat(
 				fix('Hello '),
 				exp('name'),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -70,7 +70,7 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 					fix('World'),
 					exp('name')
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -93,11 +93,11 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 						cat(
 							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
 					),
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -120,11 +120,11 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 						cat(
 							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
 					),
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
@@ -146,11 +146,11 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 						cat(
 							expMap('names.slice(0, names.length - 1)', ['name'], exp('name'), ', '),
 							fix(' and '),
-							exp('names[names.length - 1]'),
+							exp('names[names.length - 1]')
 						)
 					),
 				),
-				fix('!'),
+				fix('!')
 			)
 		)
 	);
