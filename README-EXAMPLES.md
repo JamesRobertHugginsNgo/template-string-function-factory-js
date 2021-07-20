@@ -1,6 +1,6 @@
 # Examples
 
-## Example 1: Hello World
+## Hello World
 
 ### NodeJS
 
@@ -30,7 +30,7 @@ EXAMPLE 1 - HELLO WORLD
 }
 ```
 
-## Example 2: HTML
+## HTML
 
 ### NodeJS
 
@@ -64,7 +64,7 @@ EXAMPLE 2 - HTML
 }
 ```
 
-## Example 3: Default Value
+## Default Value
 
 ### NodeJS
 
@@ -101,7 +101,7 @@ EXAMPLE 3 - DEFAULT VALUE
 }
 ```
 
-## Example 4: Loop
+## Loop
 
 ### NodeJS
 
@@ -145,7 +145,7 @@ EXAMPLE 4 - LOOP
 }
 ```
 
-## Example 5: Backward Compatible with Double Qoute
+## Backward Compatible with Double Qoute
 
 ### NodeJS
 

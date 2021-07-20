@@ -1,6 +1,6 @@
 # Implementations
 
-## Implementation 1: Template String Function Module
+## Template String Function Module
 
 ### NodeJS
 
@@ -58,7 +58,7 @@ console.log(test(['Tom', 'Dick', 'Stanly']));
 <p>Hello Tom, Dick and Stanly!</p>
 ```
 
-## Implementation 2: Script, Output, Copy and Paste
+## Script, Output, Copy and Paste
 
 An alternative is to create the script, run the code, then copy the output and paste it on your code.
 
