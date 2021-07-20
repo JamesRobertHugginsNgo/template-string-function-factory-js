@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
+const { cat, exp, expIf, expMap, fix, func, tag, render } = require('../index');
 
 const config = func(['data'], cat(
 	fix(`HELLO
@@ -155,7 +155,7 @@ console.log(render(config, { type: 'es5', quote: '"' }));
 		)
 	);
 
-	fs.writeFile('test-tsfm.js',`module.exports = ${render(value, { type: 'es5', quote: '"' })}`, (error) => {
+	fs.writeFile('tsfm.js',`module.exports = ${render(value, { type: 'es5', quote: '"' })}`, (error) => {
 		if (error) {
 			throw error;
 		}
