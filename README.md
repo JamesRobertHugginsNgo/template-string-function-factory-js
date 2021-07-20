@@ -14,16 +14,16 @@ For creating maintainable expression based string.
 const { cat, exp, fix, func, render } = require('./index');
 
 (() => {
-	console.log('\nEXAMPLE 1 - HELLO WORLD');
-	const value = func(
-		['name'],
-		cat(
-			fix('Hello '),
-			exp('name'),
-			fix('!')
-		)
-	);
-	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
+  console.log('\nEXAMPLE 1 - HELLO WORLD');
+  const value = func(
+    ['name'],
+    cat(
+      fix('Hello '),
+      exp('name'),
+      fix('!')
+    )
+  );
+  console.log(JSON.stringify({ value: render(value) }, null, '\t'));
 })();
 ```
 
@@ -32,7 +32,7 @@ const { cat, exp, fix, func, render } = require('./index');
 ```
 EXAMPLE 1 - HELLO WORLD
 {
-	"value": "(name) => `Hello ${name}!`"
+  "value": "(name) => `Hello ${name}!`"
 }
 ```
 
@@ -44,20 +44,20 @@ EXAMPLE 1 - HELLO WORLD
 const { cat, exp, fix, func, tag, render } = require('./index');
 
 (() => {
-	console.log('\nEXAMPLE 2 - HTML');
-	const value = func(
-		['name'],
-		tag(
-			fix('p'),
-			null,
-			cat(
-				fix('Hello '),
-				exp('name'),
-				fix('!')
-			)
-		)
-	);
-	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
+  console.log('\nEXAMPLE 2 - HTML');
+  const value = func(
+    ['name'],
+    tag(
+      fix('p'),
+      null,
+      cat(
+        fix('Hello '),
+        exp('name'),
+        fix('!')
+      )
+    )
+  );
+  console.log(JSON.stringify({ value: render(value) }, null, '\t'));
 })();
 ```
 
@@ -66,7 +66,7 @@ const { cat, exp, fix, func, tag, render } = require('./index');
 ```
 EXAMPLE 2 - HTML
 {
-	"value": "(name) => `<p>Hello ${name}!</p>`"
+  "value": "(name) => `<p>Hello ${name}!</p>`"
 }
 ```
 
@@ -78,23 +78,23 @@ EXAMPLE 2 - HTML
 const { cat, exp, expIf, fix, func, tag, render } = require('./index');
 
 (() => {
-	console.log('\nEXAMPLE 3 - DEFAULT VALUE');
-	const value = func(
-		['name'],
-		tag(
-			fix('p'),
-			null,
-			cat(
-				fix('Hello '),
-				expIf('name == null',
-					fix('World'),
-					exp('name')
-				),
-				fix('!')
-			)
-		)
-	);
-	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
+  console.log('\nEXAMPLE 3 - DEFAULT VALUE');
+  const value = func(
+    ['name'],
+    tag(
+      fix('p'),
+      null,
+      cat(
+        fix('Hello '),
+        expIf('name == null',
+          fix('World'),
+          exp('name')
+        ),
+        fix('!')
+      )
+    )
+  );
+  console.log(JSON.stringify({ value: render(value) }, null, '\t'));
 })();
 ```
 
@@ -103,7 +103,7 @@ const { cat, exp, expIf, fix, func, tag, render } = require('./index');
 ```
 EXAMPLE 3 - DEFAULT VALUE
 {
-	"value": "(name) => `<p>Hello ${name == null ? `World` : `${name}`}!</p>`"
+  "value": "(name) => `<p>Hello ${name == null ? `World` : `${name}`}!</p>`"
 }
 ```
 
@@ -115,30 +115,30 @@ EXAMPLE 3 - DEFAULT VALUE
 const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 
 (() => {
-	console.log('\nEXAMPLE 4 - LOOP');
-	const value = func(
-		['names'],
-		tag(
-			fix('p'),
-			null,
-			cat(
-				fix('Hello '),
-				expIf('names == null || names.length === 0',
-					fix('World'),
-					expIf('names.length === 1',
-						exp('names[0]'),
-						cat(
-							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
-							fix(' and '),
-							exp('names[names.length - 1]')
-						)
-					)
-				),
-				fix('!')
-			)
-		)
-	);
-	console.log(JSON.stringify({ value: render(value) }, null, '\t'));
+  console.log('\nEXAMPLE 4 - LOOP');
+  const value = func(
+    ['names'],
+    tag(
+      fix('p'),
+      null,
+      cat(
+        fix('Hello '),
+        expIf('names == null || names.length === 0',
+          fix('World'),
+          expIf('names.length === 1',
+            exp('names[0]'),
+            cat(
+              expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
+              fix(' and '),
+              exp('names[names.length - 1]')
+            )
+          )
+        ),
+        fix('!')
+      )
+    )
+  );
+  console.log(JSON.stringify({ value: render(value) }, null, '\t'));
 })();
 ```
 
@@ -147,7 +147,7 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 ```
 EXAMPLE 4 - LOOP
 {
-	"value": "(names) => `<p>Hello ${names == null || names.length === 0 ? `World` : `${names.length === 1 ? `${names[0]}` : `${(names.slice(0, name.length - 1)).map((name) => `${name}`).join(', ')} and ${names[names.length - 1]}`}`}!</p>`"
+  "value": "(names) => `<p>Hello ${names == null || names.length === 0 ? `World` : `${names.length === 1 ? `${names[0]}` : `${(names.slice(0, name.length - 1)).map((name) => `${name}`).join(', ')} and ${names[names.length - 1]}`}`}!</p>`"
 }
 ```
 
@@ -159,30 +159,30 @@ EXAMPLE 4 - LOOP
 const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 
 (() => {
-	console.log('\nEXAMPLE 5 - BACKWARD COMPATIBLE WITH DOUBLE QUOTE');
-	const value = func(
-		['names'],
-		tag(
-			fix('p'),
-			null,
-			cat(
-				fix('Hello '),
-				expIf('names == null || names.length === 0',
-					fix('World'),
-					expIf('names.length === 1',
-						exp('names[0]'),
-						cat(
-							expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
-							fix(' and '),
-							exp('names[names.length - 1]')
-						)
-					),
-				),
-				fix('!')
-			)
-		)
-	);
-	console.log(JSON.stringify({ value: render(value, { type: 'es5', quote: '"' }) }, null, '\t'));
+  console.log('\nEXAMPLE 5 - BACKWARD COMPATIBLE WITH DOUBLE QUOTE');
+  const value = func(
+    ['names'],
+    tag(
+      fix('p'),
+      null,
+      cat(
+        fix('Hello '),
+        expIf('names == null || names.length === 0',
+          fix('World'),
+          expIf('names.length === 1',
+            exp('names[0]'),
+            cat(
+              expMap('names.slice(0, name.length - 1)', ['name'], exp('name'), ', '),
+              fix(' and '),
+              exp('names[names.length - 1]')
+            )
+          ),
+        ),
+        fix('!')
+      )
+    )
+  );
+  console.log(JSON.stringify({ value: render(value, { type: 'es5', quote: '"' }) }, null, '\t'));
 })();
 ```
 
@@ -191,7 +191,7 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 ```
 EXAMPLE 5 - BACKWARD COMPATIBLE WITH DOUBLE QUOTE
 {
-	"value": "function(names) { return \"<p>Hello \" + (names == null || names.length === 0 ? \"World\" : (names.length === 1 ? (names[0]) : ((names.slice(0, name.length - 1)).map(function(name) { return (name); }).join(', ')) + \" and \" + (names[names.length - 1]))) + \"!</p>\"; }"
+  "value": "function(names) { return \"<p>Hello \" + (names == null || names.length === 0 ? \"World\" : (names.length === 1 ? (names[0]) : ((names.slice(0, name.length - 1)).map(function(name) { return (name); }).join(', ')) + \" and \" + (names[names.length - 1]))) + \"!</p>\"; }"
 }
 ```
 
@@ -203,34 +203,34 @@ EXAMPLE 5 - BACKWARD COMPATIBLE WITH DOUBLE QUOTE
 const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 
 (() => {
-	const value = func(
-		['names'],
-		tag(
-			fix('p'),
-			null,
-			cat(
-				fix('Hello '),
-				expIf('names == null || names.length === 0',
-					fix('World'),
-					expIf('names.length === 1',
-						exp('names[0]'),
-						cat(
-							expMap('names.slice(0, names.length - 1)', ['name'], exp('name'), ', '),
-							fix(' and '),
-							exp('names[names.length - 1]')
-						)
-					),
-				),
-				fix('!')
-			)
-		)
-	);
+  const value = func(
+    ['names'],
+    tag(
+      fix('p'),
+      null,
+      cat(
+        fix('Hello '),
+        expIf('names == null || names.length === 0',
+          fix('World'),
+          expIf('names.length === 1',
+            exp('names[0]'),
+            cat(
+              expMap('names.slice(0, names.length - 1)', ['name'], exp('name'), ', '),
+              fix(' and '),
+              exp('names[names.length - 1]')
+            )
+          ),
+        ),
+        fix('!')
+      )
+    )
+  );
 
-	fs.writeFile('test-tsfm.js',`module.exports = ${render(value, { type: 'es5', quote: '"' })}`, (error) => {
-		if (error) {
-			throw error;
-		}
-	});
+  fs.writeFile('test-tsfm.js',`module.exports = ${render(value, { type: 'es5', quote: '"' })}`, (error) => {
+    if (error) {
+      throw error;
+    }
+  });
 })();
 ```
 
