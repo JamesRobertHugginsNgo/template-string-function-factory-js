@@ -21,9 +21,9 @@ const { cat, exp, fix, func, render } = require('./index');
 })();
 ```
 
-### Result
+### Shell
 
-```
+``` shell
 EXAMPLE 1 - HELLO WORLD
 {
   "value": "(name) => `Hello ${name}!`"
@@ -55,9 +55,9 @@ const { cat, exp, fix, func, tag, render } = require('./index');
 })();
 ```
 
-### Result
+### Shell
 
-```
+``` shell
 EXAMPLE 2 - HTML
 {
   "value": "(name) => `<p>Hello ${name}!</p>`"
@@ -92,9 +92,9 @@ const { cat, exp, expIf, fix, func, tag, render } = require('./index');
 })();
 ```
 
-### Result
+### Shell
 
-```
+``` shell
 EXAMPLE 3 - DEFAULT VALUE
 {
   "value": "(name) => `<p>Hello ${name == null ? `World` : `${name}`}!</p>`"
@@ -136,9 +136,9 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 })();
 ```
 
-### Result
+### Shell
 
-```
+``` shell
 EXAMPLE 4 - LOOP
 {
   "value": "(names) => `<p>Hello ${names == null || names.length === 0 ? `World` : `${names.length === 1 ? `${names[0]}` : `${(names.slice(0, name.length - 1)).map((name) => `${name}`).join(', ')} and ${names[names.length - 1]}`}`}!</p>`"
@@ -180,9 +180,9 @@ const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 })();
 ```
 
-### Result
+### Shell
 
-```
+``` shell
 EXAMPLE 5 - BACKWARD COMPATIBLE WITH DOUBLE QUOTE
 {
   "value": "function(names) { return \"<p>Hello \" + (names == null || names.length === 0 ? \"World\" : (names.length === 1 ? (names[0]) : ((names.slice(0, name.length - 1)).map(function(name) { return (name); }).join(', ')) + \" and \" + (names[names.length - 1]))) + \"!</p>\"; }"
