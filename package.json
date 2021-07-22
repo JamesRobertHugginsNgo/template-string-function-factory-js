@@ -1,5 +1,5 @@
 {
-  "name": "template-string-function-string-factory-js",
+  "name": "template-string-function-string-factory-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-js.git"
+    "url": "git+https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-js/issues"
+    "url": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs/issues"
   },
-  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-js#readme"
+  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs#readme"
 }

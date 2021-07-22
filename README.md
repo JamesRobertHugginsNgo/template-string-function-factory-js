@@ -1,4 +1,4 @@
-# Template String Function String Factory JS
+# Template String Function String Factory for NodeJS
  
 __[ [ [__ Template String __]__ Function __]__ String __]__ Factory
 
