@@ -92,13 +92,13 @@ function fix(value) {
 /**
  * Represents a "Array.map" expression.
  * @param {string} array
- * @param {string[]} arguments
+ * @param {string[]} args
  * @param {Config} value
  * @param {string} joinString
  * @returns {ExpMapConfig}
  */
-function expMap(array, arguments, value, joinString) {
-	return { type: 'expMap', array, arguments, value, joinString };
+function expMap(array, args, value, joinString) {
+	return { type: 'expMap', array, arguments: args, value, joinString };
 }
 
 /**
@@ -123,12 +123,12 @@ function tag(name, attributes, body) {
 
 /**
  * Represents a function for rendering.
- * @param {string[]} arguments
+ * @param {string[]} args
  * @param {Config} value
  * @returns {FuncConfig}
  */
-function func(arguments, value) {
-	return { type: 'func', arguments, value };
+function func(args, value) {
+	return { type: 'func', arguments: args, value };
 }
 
 /**
@@ -162,10 +162,13 @@ function render(config, options = {}) {
  * @returns {string}
  */
 render['fix'] = function ({ value }, { quote } = {}) {
+
+	/* eslint-disable no-control-regex */
 	value = String(value)
 		.replace(new RegExp(quote, 'g'), `\\${quote}`)
 		.replace(new RegExp('(?:\r\n|\r|\n)', 'g'), '\\n')
 		.replace(new RegExp('(?:\t)', 'g'), '\\t');
+	/* eslint-enable no-control-regex */
 
 	return `${quote}${value}${quote}`;
 };
@@ -206,7 +209,7 @@ render['expIf'] = function ({ condition, trueValue, falseValue }, { type, quote 
  * @param {RenderOptions} [options={}]
  * @returns {string}
  */
-render['expMap'] = function ({ array, arguments, value, joinString }, { type, quote } = {}) {
+render['expMap'] = function ({ array, arguments: args, value, joinString }, { type, quote } = {}) {
 	let values = [];
 
 	values.push(`(${array}).map(`);
@@ -217,7 +220,7 @@ render['expMap'] = function ({ array, arguments, value, joinString }, { type, qu
 		values.push(`function(`);
 	}
 
-	values.push(arguments.join(', '));
+	values.push(args.join(', '));
 
 	if (type === 'es6') {
 		values.push(`) => `);
@@ -286,7 +289,7 @@ render['tag'] = function ({ name, attributes, body }, { type, quote } = {}) {
  * @param {RenderOptions} [options={}]
  * @returns {string}
  */
-render['func'] = function ({ arguments, value }, { type, quote } = {}) {
+render['func'] = function ({ arguments: args, value }, { type, quote } = {}) {
 	const values = [];
 
 	if (type === 'es6') {
@@ -296,9 +299,9 @@ render['func'] = function ({ arguments, value }, { type, quote } = {}) {
 	}
 
 	values.push('(');
-	const length = arguments.length;
+	const length = args.length;
 	for (let index = 0; index < length; index++) {
-		const argument = arguments[index];
+		const argument = args[index];
 		values.push(argument);
 	}
 	values.push(')');

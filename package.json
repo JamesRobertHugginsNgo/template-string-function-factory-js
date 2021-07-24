@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs/issues"
   },
-  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs#readme"
+  "homepage": "https://github.com/JamesRobertHugginsNgo/template-string-function-string-factory-nodejs#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0"
+  }
 }
