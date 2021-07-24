@@ -31,12 +31,12 @@
  */
 ```
 
-### expMap(array, arguments, value, joinString)
+### expMap(array, args, value, joinString)
 ``` JavaScript
 /**
  * Represents a "Array.map" expression.
  * @param {string} array
- * @param {string[]} arguments
+ * @param {string[]} args
  * @param {Config} value
  * @param {string} joinString
  * @returns {ExpMapConfig}
@@ -63,11 +63,11 @@
  */
 ```
 
-### func(arguments, value)
+### func(args, value)
 ``` JavaScript
 /**
  * Represents a function for rendering.
- * @param {string[]} arguments
+ * @param {string[]} args
  * @param {Config} value
  * @returns {FuncConfig}
  */
@@ -124,7 +124,7 @@
  * @typedef {Object} ExpMapConfig
  * @property {string} type
  * @property {string} array
- * @property {string[]} arguments
+ * @property {string[]} args
  * @property {Config} value
  * @property {string} joinString
  */
@@ -158,7 +158,7 @@
  * ...
  * @typedef {Object} FuncConfig
  * @property {string} type
- * @property {string[]} arguments
+ * @property {string[]} args
  * @property {Config} value
  */
 ```

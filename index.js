@@ -26,7 +26,7 @@
  * @typedef {Object} ExpMapConfig
  * @property {string} type
  * @property {string} array
- * @property {string[]} arguments
+ * @property {string[]} args
  * @property {Config} value
  * @property {string} joinString
  */
@@ -51,7 +51,7 @@
  * ...
  * @typedef {Object} FuncConfig
  * @property {string} type
- * @property {string[]} arguments
+ * @property {string[]} args
  * @property {Config} value
  */
 
@@ -98,7 +98,7 @@ function fix(value) {
  * @returns {ExpMapConfig}
  */
 function expMap(array, args, value, joinString) {
-	return { type: 'expMap', array, arguments: args, value, joinString };
+	return { type: 'expMap', array, args, value, joinString };
 }
 
 /**
@@ -128,7 +128,7 @@ function tag(name, attributes, body) {
  * @returns {FuncConfig}
  */
 function func(args, value) {
-	return { type: 'func', arguments: args, value };
+	return { type: 'func', args, value };
 }
 
 /**
@@ -209,7 +209,7 @@ render['expIf'] = function ({ condition, trueValue, falseValue }, { type, quote 
  * @param {RenderOptions} [options={}]
  * @returns {string}
  */
-render['expMap'] = function ({ array, arguments: args, value, joinString }, { type, quote } = {}) {
+render['expMap'] = function ({ array, args, value, joinString }, { type, quote } = {}) {
 	let values = [];
 
 	values.push(`(${array}).map(`);
@@ -289,7 +289,7 @@ render['tag'] = function ({ name, attributes, body }, { type, quote } = {}) {
  * @param {RenderOptions} [options={}]
  * @returns {string}
  */
-render['func'] = function ({ arguments: args, value }, { type, quote } = {}) {
+render['func'] = function ({ args, value }, { type, quote } = {}) {
 	const values = [];
 
 	if (type === 'es6') {
