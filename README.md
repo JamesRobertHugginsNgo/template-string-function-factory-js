@@ -8,6 +8,6 @@ For creating maintainable expression based string.
 
 Read More:
 
-- [Examples](README-EXAMPLES.md)
-- [Implementations](README-IMPLEMENTATION.md)
-- [Reference](README-REFERENCE.md)
+- [Examples](docs/EXAMPLES.md)
+- [Implementations](docs/IMPLEMENTATION.md)
+- [Reference](docs/REFERENCE.md)
