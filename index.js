@@ -299,11 +299,13 @@ render['func'] = function ({ args, value }, { type, quote } = {}) {
 	}
 
 	values.push('(');
+	const argsValue = [];
 	const length = args.length;
 	for (let index = 0; index < length; index++) {
-		const argument = args[index];
-		values.push(argument);
+		const arg = args[index];
+		argsValue.push(arg);
 	}
+	values.push(argsValue.join(', '));
 	values.push(')');
 
 	if (type === 'es6') {
