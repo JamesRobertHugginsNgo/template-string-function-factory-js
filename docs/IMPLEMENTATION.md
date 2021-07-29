@@ -5,6 +5,8 @@
 ### NodeJS
 
 ``` JavaScript
+const fs = require('fs');
+
 const { cat, exp, expIf, expMap, fix, func, tag, render } = require('./index');
 
 (() => {
